@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKORIVA - Live Football Scores</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080d0b;color:white;font-family:Arial,sans-serif;padding-bottom:80px}
+header{padding:25px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:27px;font-weight:900}
+.logo span{color:#b7f34a}
+.status{color:#b7f34a;font-size:11px}
+nav{display:flex;gap:22px;padding:15px 20px;border-bottom:1px solid #263329}
+nav button{background:none;border:0;color:#929c94;font-size:14px}
+nav button.active{color:#b7f34a}
+h3{margin:25px 18px 12px;font-size:15px}
+.match{background:#121b15;border:1px solid #263329;margin:12px;padding:18px;border-radius:14px}
+.league{color:#9ba69d;font-size:12px;margin-bottom:20px}
+.teams{display:flex;justify-content:space-between;align-items:center;text-align:center}
+.team{width:35%;font-size:13px}
+.score{font-size:25px;font-weight:bold}
+.minute{color:#b7f34a;font-size:12px;margin-top:5px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#111912;border-top:1px solid #263329;display:flex;justify-content:space-around;padding:17px 5px}
+.bottom button{background:none;border:0;color:#9ba69d;font-size:12px}
+.bottom button.active{color:#b7f34a}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">SKOR<span>IVA</span></div>
+<div class="status">● FOOTBALL LIVE</div>
+</header>
+<nav>
+<button class="active" onclick="change('CANLI MAÇLAR',this)">Canlı</button>
+<button onclick="change('BUGÜNÜN MAÇLARI',this)">Bugün</button>
+<button onclick="change('YARININ MAÇLARI',this)">Yarın</button>
+</nav>
+<h3 id="title">● CANLI MAÇLAR</h3>
+<div class="match">
+<div class="league">🇹🇷 TÜRKİYE • SÜPER LİG</div>
+<div class="teams">
+<div class="team">🟡🔴<br><b>Galatasaray</b></div>
+<div><div class="score">2 - 1</div><div class="minute">67'</div></div>
+<div class="team">🔵⚪<br><b>Trabzonspor</b></div>
+</div>
+</div>
+<div class="match">
+<div class="league">🏴 ENGLAND • PREMIER LEAGUE</div>
+<div class="teams">
+<div class="team">🔴⚪<br><b>Arsenal</b></div>
+<div><div class="score">1 - 1</div><div class="minute">54'</div></div>
+<div class="team">🔵<br><b>Chelsea</b></div>
+</div>
+</div>
+<div class="bottom">
+<button class="active">⚽<br>Maçlar</button>
+<button>🏆<br>Ligler</button>
+<button>★<br>Favoriler</button>
+<button>☻<br>Profil</button>
+</div>
+<script>
+function change(title,button){
+document.getElementById('title').textContent=title;
+document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+button.classList.add('active');
+}
+</script>
+</body>
+</html>
+
